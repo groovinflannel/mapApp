@@ -3,23 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { MapComponent } from './map/map/map.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    component: MapComponent
   }
 ]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MapComponent]
 })
 export class AppModule { }
