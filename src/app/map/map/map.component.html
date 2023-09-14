@@ -5,5 +5,12 @@
     <section id="map-column">
         <img src="../../../assets/world.svg" id="map">
     </section>
-    <section id="info-column">There's some info here</section>
+    <section id="info-column">
+        <h2>Information</h2>
+        <button (click)="fetchCountryData()">Fetch Country Data</button>
+
+        <ul>
+            <li *ngFor="let country of countries$ | async">{{country}}</li>
+        </ul>
+    </section>
 </div>

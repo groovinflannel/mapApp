@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map/map.component';
+import { MapService } from './map/map.service';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
   ],
-  providers: [],
+  providers: [MapService ],
   bootstrap: [MapComponent]
 })
 export class AppModule { }
