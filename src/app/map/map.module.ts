@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { MapRoutingModule } from './map-routing.module';
 import { MapComponent } from './map/map.component';
-
+import { MapService } from './map.service'; 
+ 
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MapComponent } from './map/map.component';
   imports: [
     CommonModule,
     MapRoutingModule
-  ]
+  ], 
+  providers: [ MapService ]
 })
 export class MapModule { }
