@@ -10,9 +10,15 @@ export class MapComponent {
 
   countries$;
   title = 'mapApp';
+  index;
   constructor(private mapService: MapService) {}
 
   fetchCountryData() {
-    this.countries$ = this.mapService.fetchCountryData();
+    this.mapService.fetchCountryData().subscribe(res => {
+      this.countries$ = res[1];
+
+      console.log(this.countries$);
+    });
+    return this.countries$;
   }
 }

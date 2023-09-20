@@ -10,7 +10,7 @@
         <button (click)="fetchCountryData()">Fetch Country Data</button>
 
         <ul>
-            <li *ngFor="let country of countries$ | async">{{country}}</li>
+            <li *ngFor="let country of countries$">{{country.name}}</li>
         </ul>
     </section>
 </div>

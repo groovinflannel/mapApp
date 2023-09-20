@@ -8,6 +8,6 @@ export class MapService {
     constructor(private http: HttpClient) {}
 
     fetchCountryData(): Observable<Object> {
-        return this.http.get('https://api.worldbank.org/V2/country')
+        return this.http.get('https://api.worldbank.org/V2/country?format=json');
     }
 }
