@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map/map.component';
 import { MapService } from './map/map.service';
+import { WorldMapSvg } from './map/worldMapSvg/worldMapSvg.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent, 
+    WorldMapSvg
   ],
   imports: [
     BrowserModule,

@@ -6,14 +6,11 @@
 
 #map-column {
     width: 50%;
+    height: 100%;
 }
 
 #info-column {
     width: 50%;
-}
-
-#map {
-    width: 100%;
 }
 
 
