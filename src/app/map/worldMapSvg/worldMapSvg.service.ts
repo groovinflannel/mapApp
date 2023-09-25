@@ -8,6 +8,6 @@ export class WorldMapSvgService {
     constructor(private http: HttpClient) {}
 
     fetchAllCountryData(): Observable<Object> {
-        return this.http.get('https://api.worldbank.org/V2/country?format=json');
+        return this.http.get('https://api.worldbank.org/V2/country/all?format=json&per_page=300');
     }
 }
