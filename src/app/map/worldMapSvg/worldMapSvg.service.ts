@@ -7,7 +7,7 @@ export class WorldMapSvgService {
 
     constructor(private http: HttpClient) {}
 
-    fetchSpecificCountryData(): Observable<Object> {
+    fetchAllCountryData(): Observable<Object> {
         return this.http.get('https://api.worldbank.org/V2/country?format=json');
     }
 }

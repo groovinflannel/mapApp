@@ -8,22 +8,37 @@ import { WorldMapSvgService } from './worldMapSvg.service';
 })
 export class WorldMapSvg {
 
-  country$;
+  cName = '';
+  capital = '';
+  region = '';
+  incomeLevel = '';
+  longitude = '';
+  latitude = '';
 
-  constructor(private worldMapSvgService: WorldMapSvgService, @Attribute('name') public name: string) {}
+  constructor(private worldMapSvgService: WorldMapSvgService) {}
   
-  getCountryData() {
-    this.worldMapSvgService.fetchSpecificCountryData().subscribe(res => {
-      this.country$ = res[1];
-      this.name = '';
+  getCountryData(countryName: string) {
+    this.worldMapSvgService.fetchAllCountryData().subscribe(res => {
 
-      console.log(this.country$);
+      for (let i = 0; i < res[1].length; i++) {
+        if (countryName === res[1][i]["name"]) {
+          this.cName = countryName;
+          this.capital = res[1][i]["capitalCity"];
+          this.region = res[1][i]["region"]["value"];
+          this.incomeLevel = res[1][i]["incomeLevel"]["value"];
+          this.longitude = res[1][i]["longitude"];
+          this.latitude = res[1][i]["latitude"];
+        }
+      }
+      
+
+      console.log(`Country: ${this.cName}, Capital: ${this.capital}, Region: ${this.region}, Income level: ${this.incomeLevel}, 
+      Longitude: ${this.longitude}, Latitude: ${this.latitude}`);
     });
-    return this.country$;
   }
 
   getCountryName(clickedCountry: string) {
     let countryName = clickedCountry;
-    console.log(countryName);
+    this.getCountryData(countryName);
   }
 }
