@@ -17,12 +17,12 @@ export class WorldMapSvg {
 
   constructor(private worldMapSvgService: WorldMapSvgService) {}
   
-  getCountryData(countryName: string) {
+  getCountryDataById(countryId: string) {
     this.worldMapSvgService.fetchAllCountryData().subscribe(res => {
 
       for (let i = 0; i < res[1].length; i++) {
-        if (countryName === res[1][i]["name"]) {
-          this.cName = countryName;
+        if (countryId === res[1][i]["id"]) {
+          this.cName = res[1][i]["name"];
           this.capital = res[1][i]["capitalCity"];
           this.region = res[1][i]["region"]["value"];
           this.incomeLevel = res[1][i]["incomeLevel"]["value"];
@@ -39,6 +39,6 @@ export class WorldMapSvg {
 
   getCountryName(clickedCountry: string) {
     let countryName = clickedCountry;
-    this.getCountryData(countryName);
+    this.getCountryDataById(countryName);
   }
 }
