@@ -3,10 +3,10 @@ import { MapService } from '../map.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css'],
+  templateUrl: './info.component.html',
+  styleUrls: ['./info.component.css'],
 })
-export class MapComponent {
+export class InfoComponent {
 
   countries$;
   title = 'mapApp';

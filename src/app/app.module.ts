@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { MapComponent } from './map/map/map.component';
+import { InfoComponent } from './map/map/info.component';
 import { MapService } from './map/map.service';
 import { WorldMapSvg } from './map/worldMapSvg/worldMapSvg.component';
 import { WorldMapSvgService } from './map/worldMapSvg/worldMapSvg.service';
@@ -13,14 +13,14 @@ import { WorldMapSvgService } from './map/worldMapSvg/worldMapSvg.service';
 const routes: Routes = [
   {
     path: '',
-    component: MapComponent
+    component: InfoComponent
   }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent, 
+    InfoComponent, 
     WorldMapSvg
   ],
   imports: [
@@ -29,6 +29,6 @@ const routes: Routes = [
     HttpClientModule,
   ],
   providers: [MapService, WorldMapSvgService ],
-  bootstrap: [MapComponent]
+  bootstrap: [InfoComponent]
 })
 export class AppModule { }
