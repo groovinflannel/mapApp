@@ -34,12 +34,6 @@ export class InfoService {
             }
           }
           
-          
-          console.log(`Country: ${this.newCountry.name}, Capital: ${this.newCountry.capital}, Region: ${this.newCountry.region}, Income level: ${this.newCountry.incomeLevel}, 
-          Longitude: ${this.newCountry.longitude}, Latitude: ${this.newCountry.latitude}`);
-    
-    
-    
           return this.newCountry;
         });
     

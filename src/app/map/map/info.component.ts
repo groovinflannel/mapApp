@@ -15,8 +15,4 @@ export class InfoComponent {
 
   countryDisplay = this.infoService.returnCountryObject();
 
-  logDisplay() {
-    console.log(this.countryDisplay);
-  }
-
 }
