@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MapRoutingModule } from './map-routing.module';
-import { MapComponent } from './map/info.component';
-import { MapService } from './map.service'; 
+import { MapRoutingModule } from './info-routing.module';
+import { InfoComponent } from './map/info.component';
+import { InfoService } from './info.service'; 
  
 
 @NgModule({
   declarations: [
-    MapComponent
+    InfoComponent
   ],
   imports: [
     CommonModule,
     MapRoutingModule
   ], 
-  providers: [ MapService ]
+  providers: [ InfoService ]
 })
 export class MapModule { }

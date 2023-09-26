@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { InfoComponent } from './map/map/info.component';
-import { MapService } from './map/map.service';
+import { InfoService } from './map/info.service';
 import { WorldMapSvg } from './map/worldMapSvg/worldMapSvg.component';
 import { WorldMapSvgService } from './map/worldMapSvg/worldMapSvg.service';
 
@@ -28,7 +28,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
   ],
-  providers: [MapService, WorldMapSvgService ],
+  providers: [InfoService, WorldMapSvgService ],
   bootstrap: [InfoComponent]
 })
 export class AppModule { }

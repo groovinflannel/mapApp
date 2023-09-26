@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MapService } from '../map.service';
+import { WorldMapSvgService } from '../worldMapSvg/worldMapSvg.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +11,13 @@ export class InfoComponent {
   countries$;
   title = 'mapApp';
   index;
-  constructor(private mapService: MapService) {}
+  countryObj;
+  constructor(private worldMapSvgService: WorldMapSvgService) {}
 
-  fetchCountryData() {
-    this.mapService.fetchCountryData().subscribe(res => {
-      this.countries$ = res[1];
+  
 
-      console.log(this.countries$);
-    });
-    return this.countries$;
+  fetchCountryObject() {
+    this.countryObj = '';
+    console.log(this.countryObj);
   }
 }

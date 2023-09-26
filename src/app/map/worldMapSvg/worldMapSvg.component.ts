@@ -1,5 +1,6 @@
-import { Attribute, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { WorldMapSvgService } from './worldMapSvg.service';
+import { InfoService } from '../info.service';
 
 @Component({
   selector: 'worldMapSvg',
@@ -14,6 +15,14 @@ export class WorldMapSvg {
   incomeLevel = '';
   longitude = '';
   latitude = '';
+  countryObj = {
+    "name": '',
+    "capital": '',
+    "region": '',
+    "incomeLevel": '',
+    "longitude": '',
+    "latitude": ''
+  };
 
   constructor(private worldMapSvgService: WorldMapSvgService) {}
   
@@ -28,13 +37,25 @@ export class WorldMapSvg {
           this.incomeLevel = res[1][i]["incomeLevel"]["value"];
           this.longitude = res[1][i]["longitude"];
           this.latitude = res[1][i]["latitude"];
+
+          this.countryObj.name = this.cName;
+          this.countryObj.capital = this.capital;
+          this.countryObj.region = this.region;
+          this.countryObj.incomeLevel = this.incomeLevel;
+          this.countryObj.longitude = this.longitude;
+          this.countryObj.latitude = this.latitude;
         }
       }
       
 
       console.log(`Country: ${this.cName}, Capital: ${this.capital}, Region: ${this.region}, Income level: ${this.incomeLevel}, 
       Longitude: ${this.longitude}, Latitude: ${this.latitude}`);
+
+
+
+      return this.countryObj;
     });
+
   }
 
   getCountryName(clickedCountry: string) {
