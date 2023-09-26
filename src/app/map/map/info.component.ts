@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InfoService } from '../info.service';
 import { WorldMapSvgService } from '../worldMapSvg/worldMapSvg.service';
 
 @Component({
@@ -8,16 +9,14 @@ import { WorldMapSvgService } from '../worldMapSvg/worldMapSvg.service';
 })
 export class InfoComponent {
 
-  countries$;
-  title = 'mapApp';
-  index;
-  countryObj;
-  constructor(private worldMapSvgService: WorldMapSvgService) {}
+  title = 'mapApp';  
 
-  
+  constructor(private worldMapSvgService: WorldMapSvgService, private infoService: InfoService) {}
 
-  fetchCountryObject() {
-    this.countryObj = '';
-    console.log(this.countryObj);
+  countryDisplay = this.infoService.returnCountryObject();
+
+  logDisplay() {
+    console.log(this.countryDisplay);
   }
+
 }
