@@ -10,13 +10,13 @@ export class WorldMapSvg {
 
   constructor(private infoService: InfoService) {}
 
-  countryClick(countryId: string) {
-    this.infoService.getCountryDataById(countryId);
+  countryClick(countryName: string) {
+    this.infoService.getCountryDataByName(countryName);
   }
   
 
   getCountryName(clickedCountry: string) {
     let countryName = clickedCountry;
-    this.infoService.getCountryDataById(countryName);
+    this.infoService.getCountryDataByName(countryName);
   }
 }
